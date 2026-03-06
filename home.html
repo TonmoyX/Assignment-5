@@ -3,9 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+   <link rel="stylesheet" href="style.css">
+    <title>GIT-Home</title>
 </head>
 <body>
+
+    <header>
+        <div class="navbar bg-base-100 shadow-sm">
+  <div class="flex-1">
+    <a class="btn btn-ghost text-xl"><img class="w-10" src="./assets/github-logo.png">Github Issue Tracker</a>
+  </div>
+  <div class="flex gap-2">
+    <input type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto" />
+        <div class="w-full rounded-md">
+          <button class="btn btn-primary">+ New Issue</button>
+        </div>
+  </div>
+</div>
+    </header>
+
+
+
+    <main class="max-w-[1110px] mx-auto mt-[60px]">
+        <section id="btnContainer" class="bg-gray-100 py-[24px] pl-[24px] rounded-xl gap-2">
+            <button id="allBtn" class="btn btn-primary w-[120px]">All</button>
+            <button id="openBtn" class="btn w-[120px]">Open</button>
+            <button id="closeBtn" class="btn w-[120px]">Close</button>
+        </section>
+
+        <section id="countContainer" class="bg-gray-100 py-[24px] pl-[24px] rounded-t-xl mt-[16px]">
+            <div class="flex justify-between">
+                <div class="flex">
+                    <img src="./assets/Aperture.png" class="bg-purple-200 rounded-full p-3 w-15">
+                    <div class="ml-[10px]">
+                        <p class="text-[1.4rem] font-semibold" id="issueCount">0<span> Issues</span></p>
+                        <p class="text-[#64748B] ">Track and manage your project issues</p>
+                    </div>
+                </div>
+
+                <div class="flex pr-[24px] items-center gap-4">
+                    <h2 class="text-green-300"><i class="fa-solid fa-circle"> </i><span class="text-black"> Open</span></h2>
+                    <h2 class="text-purple-400"><i class="fa-solid fa-circle"> </i><span class="text-black"> Close</span></h2>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="allCardSection" class="bg-gray-100 py-[24px] pl-[24px] pr-[24px] rounded-b-xl mt-[1px]">
+                <div id="allCards" class="grid grid-cols-4 gap-2">
+                    
+                    <!-- <div class=" rounded-md bg-white p-4">
+                        <div class="flex justify-between">
+                        <img src="./assets/Open-Status.png">
+                        <h2 class="bg-[#FEECEC] rounded-xl w-[80px] text-center text-red-500">HIGH</h2>
+                        </div>
+                        <h1 class="font-semibold text-[0.9rem] mt-[12px]">Fix navigation menu on mobile devices</h1>
+                        <p class="text-[#64748B] text-[.8rem] mt-[8px]">The navigation menu doesn't collapse properly on mobile devices...</p>
+                        <div class="mt-[18px] flex gap-4 items-center border-b-2 border-gray-300 pb-[1rem]">
+                            <h1 class=" bg-[#FEECEC] rounded-xl text-red-500 w-[120px] p-1 text-center"><i class="fa-solid fa-bug"></i><span> Bug</span></h1>
+                            <h2 class="bg-[#FFF8DB] rounded-xl text-[#D97706] w-full text-center p-1"><i class="fa-solid fa-location-crosshairs"></i><span> help wanted</span></h2>
+                        </div>
+                        <div class=" pt-[1rem] ">
+                        <p class="text-[#64748B] text-[.8rem] mb-[8px]">#1 by john_doe</p>
+                        <p class="text-[#64748B] text-[.8rem]">1/15/2024</p>
+                    </div>
+                    </div> -->
+                    
+                    
+
+                </div>
+        </section>
+    </main>
     
 
    <script src="home.js"></script>
