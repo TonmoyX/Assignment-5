@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+   <link rel="stylesheet" href="style.css">
+    <title>Github Issue Tracker</title>
+</head>
+<body class="">
+   
+    <section class="max-w-[520px] mx-auto rounded-xl bg-gray-100 pb-[32px] pt-[32px] mt-[78px]">
+    <header class="mx-auto text-center justify-center items-center ">
+        <img src="./assets/github-logo.png" class=" mx-auto">
+        <h1 class="mt-[24px] font-semibold text-[1.6rem] text-[#1F2937] w-full">GitHub Issues Tracker</h1>
+        <p class="text-[1rem] text-[#64748B] mt-[4px]">Sign in to manage your issues</p>
+    </header>
+
+    <main>
+        <div class="px-[32px] mt-[24px]">
+            <!-- <form action="#" method=""> -->
+            <label class="font-medium text-[1rem]">Username</label><br>
+            <input id="inputName" class="w-full p-[16px] rounded-xl box-border border-gray-300 mt-[8px]" type="text" placeholder="Enter Username">
+            <p class="text-[#4A00FF] text-[14px] mt-[6px] mb-[16px]">Default: admin</p>
+
+            <label class="font-medium text-[1rem] ">Password</label><br>
+            <input id="inputPass" class="w-full p-[16px] rounded-xl box-border border-gray-300 mt-[8px]" type="text" placeholder="Enter Password">
+            <p class="text-[#4A00FF] text-[14px] mt-[6px] mb-[16px]">Default: admin123</p>
+           <button id="signBtn" class="btn btn-primary w-full">Sign In</button>
+          <!-- </form> -->
+          <div>
+          </div>
+        </div>
+
+        <div>
+           <h2 class="text-center mt-[24px]">OR</h2>
+           <p class="text-center text-[#64748B] text-[.9rem] mt-[24px] mb-[8px]">Demo Credentials:</p>
+
+           <div class="max-w-[456px] mx-auto bg-[#64748B]/10 rounded-xl py-[24px]">
+                <h1 class="text-center text-[1rem] font-semibold ">Username : <span class="text-[1rem]">admin</span></h1>
+                <h1 class="text-center text-[1rem] font-semibold ">Password : <span class="text-[1rem]">admin123</span></h1>
+           </div>
+        </div>
+        
+    </main>
+</section>
+
+
+<script src="login.js"></script>
+</body>
+</html>
