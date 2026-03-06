@@ -29,7 +29,7 @@ const displayIssue = (issueCards) => {
                         <div class="flex justify-between">
                         ${card.status === 'open' ? `<img src="./assets/Open-Status.png">` : `<img src="./assets/Closed-Status.png">`}
                         <h2 class="rounded-xl w-[80px] text-center ${card.priority === 'high' ? 'bg-[#FEECEC] text-red-500' : card.priority === 'medium' ? 'bg-[#FFF6D1] text-[#F59E0B]' : card.priority === 'low' ? 'bg-[#EEEFF2] text-[#9CA3AF]' : ''}">${card.priority}</h2>
-                        </div>
+                        </div >
                         <h1 class="font-semibold text-[1.3rem] line-clamp-2 mt-[12px]">${card.title}</h1>
                         <p class="text-[#64748B] text-[.8rem] line-clamp-2 mt-[8px]">${card.description}</p>
                         <div class="mt-[18px] flex gap-4 items-center border-b-2 border-gray-300 pb-[1rem]">
