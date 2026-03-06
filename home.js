@@ -24,6 +24,7 @@ const allCards = document.getElementById("allCards")
 const displayIssue = (issueCards) => {
     issueCards.forEach((card) => {
         const divCard = document.createElement("div");
+        const date = new Date(card.createdAt).toLocaleDateString();
    
         divCard.innerHTML = `<div class=" rounded-md bg-white h-full p-4 ${card.status === 'open' ? `border-t-2 border-green-300` : `border-t-2 border-purple-400` }">
                         <div class="flex justify-between">
@@ -38,7 +39,7 @@ const displayIssue = (issueCards) => {
                         </div>
                         <div class=" pt-[1rem] ">
                         <p class="text-[#64748B] text-[.8rem] mb-[8px]">${card.author}</p>
-                        <p class="text-[#64748B] text-[.8rem]">1/15/2024</p>
+                        <p class="text-[#64748B] text-[.8rem]">${date}</p>
                     </div>
                     </div>`;
 
