@@ -13,8 +13,8 @@ Ans 2 : In JavaScript, the spread operator (...) is used to expand or spread val
 Ans 3 : In JavaScript, map(), filter(), and forEach() are array methods used to loop through elements of an array. But they are used for different purposes.
 
 1. map() return new array, used when modifying or transforming data
-2. filter() is used when you want to pick specific elements based on a condition.
-3. forEach() is used when you only want to run something for each item in the array.
+2. filter() is used when we want to pick specific elements based on a condition.
+3. forEach() is used when we only want to run something for each item in the array.
 
 Ans 4 : In JavaScript, an arrow function (=>) is a short and modern way to write a function.
 
