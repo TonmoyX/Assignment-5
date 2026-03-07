@@ -16,13 +16,13 @@
 
     <header>
         <div class="navbar bg-base-100 shadow-sm">
-  <div class="flex-1">
-    <a class="btn btn-ghost text-xl"><img class="w-10" src="./assets/github-logo.png">Github Issue Tracker</a>
+  <div class="md:flex-1">
+    <a class="btn btn-ghost text-sm md:text-xl"><img class="w-10" src="./assets/github-logo.png">Github Issue Tracker</a>
   </div>
   <div class="flex gap-2">
-    <input type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto" />
+    <input type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto" id="input" />
         <div class="w-full rounded-md">
-          <button class="btn btn-primary">+ New Issue</button>
+          <button id="btnSearch" class="btn btn-primary">Search</button>
         </div>
   </div>
 </div>
@@ -32,13 +32,13 @@
 
     <main class="max-w-[1110px] mx-auto mt-[60px]">
         <section id="btnContainer" class="bg-gray-100 py-[24px] pl-[24px] rounded-xl gap-2">
-            <button onclick="toggle('allBtn')" id="allBtn" class="btn btn-primary w-[120px]">All</button>
-            <button onclick="toggle('openBtn')" id="openBtn" class="btn w-[120px]">Open</button>
-            <button onclick="toggle('closeBtn')" id="closeBtn" class="btn w-[120px]">Close</button>
+            <button onclick="toggle('allBtn')" id="allBtn" class="btn btn-primary md:w-[120px]">All</button>
+            <button onclick="toggle('openBtn')" id="openBtn" class="btn md:w-[120px]">Open</button>
+            <button onclick="toggle('closeBtn')" id="closeBtn" class="btn md:w-[120px]">Close</button>
         </section>
           
         <section id="countContainer" class="bg-gray-100 py-[24px] pl-[24px] rounded-t-xl mt-[16px]">
-            <div class="flex justify-between">
+            <div class="md:flex md:justify-between">
                 <div class="flex">
                     <img src="./assets/Aperture.png" class="bg-purple-200 rounded-full p-3 w-15">
                     <div class="ml-[10px]">
@@ -47,32 +47,26 @@
                     </div>
                 </div>
 
-                <div class="flex pr-[24px] items-center gap-4">
+                <div class="ml-[65px] flex md:pr-[24px] md:items-center md:gap-4">
                     <h2 class="text-green-300"><i class="fa-solid fa-circle"> </i><span class="text-black"> Open</span></h2>
                     <h2 class="text-purple-400"><i class="fa-solid fa-circle"> </i><span class="text-black"> Close</span></h2>
                 </div>
             </div>
         </section>
 
-
-
-        
-
         <section  class="bg-gray-100 py-[24px] pl-[24px] pr-[24px] rounded-b-xl mt-[1px] hidden" id="fs">
-              <div id="filter-section" class="grid grid-cols-4 gap-2">
+              <div id="filter-section" class="grid grid-cols-1 md:grid-cols-4 gap-2">
 
               </div>
         </section>
-
 
             <!-- reloade section -->
             <section id="reloadSection" class="flex justify-center items-center mt-[16px] hidden">
               <p><span class="loading loading-spinner text-primary"></span></p>
             </section>
 
-
         <section id="allCardSection" class="bg-gray-100 py-[24px] pl-[24px] pr-[24px] rounded-b-xl mt-[1px]">
-                <div id="allCards" class="grid grid-cols-4 gap-2">
+                <div id="allCards" class="grid grid-cols-1 md:grid-cols-4 gap-2">
                     
                     <!-- <div class=" rounded-md bg-white p-4">
                         <div class="flex justify-between">
@@ -96,13 +90,10 @@
                 </div>
         </section>
 
-
         <!-- Modal -->
 <dialog id="my_modal" class="modal modal-bottom sm:modal-middle">
   <div id="details-container" class="modal-box">
-    <h3 class="text-lg font-bold">Hello!</h3>
-    <p class="py-4">Press ESC key or click the button below to close</p>
-    
+   
   </div>
 </dialog>
 

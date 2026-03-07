@@ -137,12 +137,6 @@ const displayCloseIssue = (closeCard) => {
 }) 
 }
 
-
-
-
-
-
-
 // toggling button
 const toggle = (id) =>{
     allBtn.classList.remove("btn-primary");
@@ -189,17 +183,23 @@ const hideReload = () => {
     reloadSection.classList.add("hidden");
 }
 
+// Search option
+document.getElementById("btnSearch").addEventListener('click', (e) => {
+    e.preventDefault();
+    searchIssue();
+});
 
+const searchIssue = async() => {
+    const input = document.getElementById("input");
+    const searchText = input.value.toLowerCase();
+    const res = await fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues");
+    const data = await res.json();
+    const searchResult = data.data.filter(issue => issue.title.toLowerCase().includes(searchText) || issue.description.toLowerCase().includes(searchText));
+    allCards.innerHTML = "";
+    displayIssue(searchResult);
+    issueCount.textContent = `${searchResult.length} Issues`;
 
-
-
-
-
-
-
-
-
-
+}
 
 //Modal
 
@@ -218,7 +218,7 @@ const detailsContainer = document.getElementById("details-container");
                         <h1 class="font-semibold text-[1.3rem] line-clamp-2 mt-[12px]">${card.title}</h1>
                         
                         <div>
-                        <p class="flex items-center"> <span class="${card.status === 'open' ? 'bg-[#FEECEC] text-red-500' : card.status === 'close' ? 'bg-[#FFF6D1] text-[#F59E0B]' : 'bg-[#bd91ee] text-[#5d04c2]'} px-2 py-1 rounded-full line-clamp-1 w-16">${card.status}</span>  .  <span> Opened by ${card.author} </span>  . <span>  ${date}</span>  </p>
+                        <p class="flex items-center"> <span class="${card.status === 'open' ? 'bg-[#228B22] text-white' : card.status === 'close' ? 'bg-[#FFF6D1] text-[#F59E0B]' : 'bg-[#bd91ee] text-white'} px-2 py-1 rounded-full line-clamp-1 w-16">${card.status}</span>  .  <span> Opened by ${card.author} </span>  . <span>  ${date}</span>  </p>
                         </div>
 
                         <p class="text-[#64748B] text-[.8rem] line-clamp-2 mt-[8px]">${card.description}</p>
