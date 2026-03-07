@@ -2,8 +2,9 @@ const allBtn = document.getElementById("allBtn");
 const openBtn = document.getElementById("openBtn");
 const closeBtn = document.getElementById("closeBtn");
 const filterSection = document.getElementById("filter-section");
-
+const reloadSection = document.getElementById("reloadSection");
 const issueCount = document.getElementById("issueCount");
+const fs = document.getElementById("fs");
 
 const openIssueCount = [];
 const closeIssueCount = [];
@@ -11,11 +12,14 @@ const closeIssueCount = [];
 
 // all issue take by api
 const allIssue = async() => {
+    
     const res = await fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues");
     const data = await res.json();
+    hideReload();
     displayIssue(data.data);
     issueCount.textContent = `${data.data.length} Issues`;
 }
+
 allIssue();
 
 
@@ -49,8 +53,10 @@ const displayIssue = (issueCards) => {
 } 
 
 const openIssue = async() => {
+    showReload();
     const res = await fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues");
     const data = await res.json();
+    hideReload();
     displayOpenIssue(data.data);
     issueCount.textContent = `${openIssueCount.length} Issues`;
 }
@@ -91,8 +97,10 @@ const displayOpenIssue = (openCards) => {
 // filter close issue
 
 const closeIssue = async() => {
+    showReload();
     const res = await fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues");
     const data = await res.json();
+    hideReload();
     displayCloseIssue(data.data);
     issueCount.textContent = `${closeIssueCount.length} Issues`;
 }
@@ -145,31 +153,41 @@ const toggle = (id) =>{
     selectedBtn.classList.remove("btn-primary");
     selectedBtn.classList.add("btn-primary");
 
-    if(id === "allBtn"){
+    if(id === "allBtn"){showReload();
         allCards.innerHTML = "";
+        fs.classList.add("hidden");
         allIssue();
-        openIssueCount.length = 0;
         closeIssueCount.length = 0;
-        
+        openIssueCount.length = 0;
+        filterSection.innerHTML = "";  
     }
     else if(id === "openBtn"){
         allCards.innerHTML = "";
+        fs.classList.remove("hidden");
         openIssue();
         closeIssueCount.length = 0;
+        openIssueCount.length = 0;
         filterSection.innerHTML = "";
     }
     else if(id === "closeBtn"){
         allCards.innerHTML = "";
+        fs.classList.remove("hidden");
         closeIssue();
         openIssueCount.length = 0;
+        closeIssueCount.length = 0;
         filterSection.innerHTML = "";
 
     }
 }
 
+// Relode animation
 
-
-
+const showReload = () => {
+    reloadSection.classList.remove("hidden");
+}
+const hideReload = () => {
+    reloadSection.classList.add("hidden");
+}
 
 
 

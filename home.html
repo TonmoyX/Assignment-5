@@ -36,7 +36,7 @@
             <button onclick="toggle('openBtn')" id="openBtn" class="btn w-[120px]">Open</button>
             <button onclick="toggle('closeBtn')" id="closeBtn" class="btn w-[120px]">Close</button>
         </section>
-
+          
         <section id="countContainer" class="bg-gray-100 py-[24px] pl-[24px] rounded-t-xl mt-[16px]">
             <div class="flex justify-between">
                 <div class="flex">
@@ -54,15 +54,21 @@
             </div>
         </section>
 
+
+
         
 
-        <section  class="bg-gray-100 py-[24px] pl-[24px] pr-[24px] rounded-b-xl mt-[1px]">
+        <section  class="bg-gray-100 py-[24px] pl-[24px] pr-[24px] rounded-b-xl mt-[1px] hidden" id="fs">
               <div id="filter-section" class="grid grid-cols-4 gap-2">
 
               </div>
         </section>
 
 
+            <!-- reloade section -->
+            <section id="reloadSection" class="flex justify-center items-center mt-[16px] hidden">
+              <p><span class="loading loading-spinner text-primary"></span></p>
+            </section>
 
 
         <section id="allCardSection" class="bg-gray-100 py-[24px] pl-[24px] pr-[24px] rounded-b-xl mt-[1px]">
@@ -92,10 +98,6 @@
 
 
         <!-- Modal -->
-
-
-        <!-- Open the modal using ID.showModal() method -->
-<!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
 <dialog id="my_modal" class="modal modal-bottom sm:modal-middle">
   <div id="details-container" class="modal-box">
     <h3 class="text-lg font-bold">Hello!</h3>
@@ -104,18 +106,8 @@
   </div>
 </dialog>
 
-        <!-- Open the modal using ID.showModal() method -->
-<!-- <button class="btn" >open modal</button> -->
-<!-- <dialog id="my_modal" class="modal">
-  <div id="details-container" class="modal-box">
-    <div class="modal-action">
-      <form method="dialog">
-      if there is a button in form, it will close the modal -->
-        <!-- <button class="btn btn-primary">Close</button>
-      </form>
-    </div>
-  </div>
-</dialog> -->  
+       
+
   </main> 
     
 
