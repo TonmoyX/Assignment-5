@@ -198,7 +198,7 @@ const searchIssue = async() => {
     allCards.innerHTML = "";
     displayIssue(searchResult);
     issueCount.textContent = `${searchResult.length} Issues`;
-
+    input.value = '';
 }
 
 //Modal
